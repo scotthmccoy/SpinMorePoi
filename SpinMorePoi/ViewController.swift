@@ -22,10 +22,13 @@ class ViewController: UIViewController {
     
     @IBAction func btnVisitSpinMorePoiClick(sender: UIButton) {
         DebugLogWhereAmI()
+        let url = NSURL(string: "http://spinmorepoi.com")!
+        UIApplication.sharedApplication().openURL(url)
     }
     
     @IBAction func btnWatchRandomPoiVideo(sender: UIButton) {
-        DebugLogWhereAmI()        
+        //http://www.spinmorepoi.com/?json=1&count=-1
+        DebugLogWhereAmI()
     }
 }
 
