@@ -16,17 +16,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIa-bA-Esv">
-                                <rect key="frame" x="247" y="259" width="175" height="30"/>
-                                <state key="normal" title="Watch Random Poi Video">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UK0-0g-bWm">
-                                <rect key="frame" x="247" y="73" width="158" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UK0-0g-bWm">
+                                <rect key="frame" x="221" y="73" width="158" height="30"/>
                                 <state key="normal" title="Visit SpinMorePoi.Com">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnVisitSpinMorePoiClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oNr-80-xB5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIa-bA-Esv">
+                                <rect key="frame" x="212.5" y="259" width="175" height="30"/>
+                                <state key="normal" title="Watch Random Poi Video">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnWatchRandomPoiVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y25-gb-auf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -37,6 +43,10 @@
                             <constraint firstAttribute="centerX" secondItem="fIa-bA-Esv" secondAttribute="centerX" id="gZm-fs-HrW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnVisitSpinMorePoi" destination="UK0-0g-bWm" id="1DO-Kb-cIx"/>
+                        <outlet property="btnWatchRandomVideo" destination="fIa-bA-Esv" id="yBQ-V3-M5Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,16 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var btnWatchRandomVideo: UIButton!
+    @IBOutlet weak var btnVisitSpinMorePoi: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //MARK: IBActions
+    
+    @IBAction func btnVisitSpinMorePoiClick(sender: UIButton) {
+        DebugLogWhereAmI()
     }
-
-
+    
+    @IBAction func btnWatchRandomPoiVideo(sender: UIButton) {
+        DebugLogWhereAmI()        
+    }
 }
 
