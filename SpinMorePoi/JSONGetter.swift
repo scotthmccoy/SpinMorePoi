@@ -14,9 +14,11 @@ class JSONGetter {
     class func downloadAndParseJSON(urlString: String, successBlock:(Dictionary<String,AnyObject>)->(), failureBlock:(NSError?)->()) {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            if let jsonData = JSONGetter.getJSON(urlString) {
-                if let dict = JSONGetter.parseJSON(jsonData) {
-                    
+            
+            var error:NSError?
+            
+            if let jsonData = JSONGetter.getJSON(urlString, error:&error) {
+                if let dict = JSONGetter.parseJSON(jsonData, error:&error) {
                     dispatch_async(dispatch_get_main_queue()) {
                         successBlock(dict)
                     }
@@ -24,15 +26,15 @@ class JSONGetter {
             }
             
             dispatch_async(dispatch_get_main_queue()) {
-                failureBlock(nil)
+                failureBlock(error)
             }
         }
     }
 
-    private class func getJSON(urlString: String) -> NSData? {
+    //MARK: Private Methods
+    private class func getJSON(urlString: String, error:NSErrorPointer) -> NSData? {
         if let url = NSURL(string: urlString){
-            var error: NSError?
-            if let ret = NSData(contentsOfURL: url, options: NSDataReadingOptions.DataReadingUncached, error: &error) {
+            if let ret = NSData(contentsOfURL: url, options: NSDataReadingOptions.DataReadingUncached, error:error) {
                 return ret
             }
             DebugLog("ERROR \(error)")
@@ -41,9 +43,8 @@ class JSONGetter {
         return nil
     }
 
-    private class func parseJSON(inputData: NSData) -> Dictionary<String,AnyObject>? {
-        var error: NSError?
-        if let ret = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as? Dictionary<String,AnyObject> {
+    private class func parseJSON(inputData: NSData, error:NSErrorPointer) -> Dictionary<String,AnyObject>? {
+        if let ret = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error:error) as? Dictionary<String,AnyObject> {
             return ret
         }
         DebugLog("ERROR \(error)")
