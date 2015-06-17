@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
 
     //MARK: IBActions
@@ -30,5 +32,12 @@ class ViewController: UIViewController {
         //http://www.spinmorepoi.com/?json=1&count=-1
         DebugLogWhereAmI()
     }
+    
+    
+    
+    
+
+    
+
 }
 
