@@ -8,14 +8,14 @@
 
 import Foundation
 
-class FileGetter {
+class FileSystemHelper {
     
     
-    func getDocAsStringWithResourceFallback(filename:String) -> String? {
+    class func getDocAsStringWithResourceFallback(filename:String) -> String? {
 
         //Get the path to where the file will be if it's already in the docs folder
         var pathToDoc = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-        pathToDoc.stringByAppendingPathComponent(filename)
+        pathToDoc = pathToDoc.stringByAppendingPathComponent(filename)
         
         //Check to see if it exists
         let fileManager = NSFileManager.defaultManager()
@@ -41,13 +41,36 @@ class FileGetter {
         }
         
         //File should now exist at the doc path.
-        if !fileManager.fileExistsAtPath(pathToDoc) {
-            DebugLog("File doesn't exist at \(pathToDoc) after copying from bundle.")
-            return nil
+        var error:NSError?
+        let ret = String(contentsOfFile: pathToDoc, encoding: NSUTF8StringEncoding, error: &error)
+        
+        if let error = error {
+            DebugLog("Error getting file! \(error)")
         }
         
-        //TODO: Open the doc and return it as a string.
-        return "TEST"
+        return ret
+    }
+
+    func deleteDoc(filename:String) {
+        
+        //Get the path to where the file will be if it's already in the docs folder
+        var pathToDoc = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+        pathToDoc = pathToDoc.stringByAppendingPathComponent(filename)
+        
+        //Delete the file
+        let fileManager = NSFileManager.defaultManager()
+        var error:NSError?
+        if !fileManager.removeItemAtPath(filepath1, error: &error) {
+            DebugLog("Remove failed: \(error)")
+        }
+    }
+    
+    
+    func writeToDoc(filename:String, contents:String) -> Bool {
+        co.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding, error: nil);
+        
+
+        
     }
  
     

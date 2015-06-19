@@ -9,7 +9,7 @@
 import Foundation
 
 
-class JSONGetter {
+class JSONHelper {
     
     class func downloadAndParseJSON(urlString: String, successBlock:(dict: Dictionary<String,AnyObject>)->(), failureBlock:(error: NSError?)->()) {
         
@@ -35,7 +35,7 @@ class JSONGetter {
     }
 
     //MARK: Private Methods
-    private class func getJSON(urlString: String, error:NSErrorPointer) -> NSData? {
+    class func getJSON(urlString: String, error:NSErrorPointer) -> NSData? {
         if let url = NSURL(string: urlString){
             if let ret = NSData(contentsOfURL: url, options: NSDataReadingOptions.DataReadingUncached, error:error) {
                 return ret
@@ -46,7 +46,7 @@ class JSONGetter {
         return nil
     }
 
-    private class func parseJSON(inputData: NSData, error:NSErrorPointer) -> Dictionary<String,AnyObject>? {
+    class func parseJSON(inputData: NSData, error:NSErrorPointer) -> Dictionary<String,AnyObject>? {
         if let ret = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error:error) as? Dictionary<String,AnyObject> {
             return ret
         }
