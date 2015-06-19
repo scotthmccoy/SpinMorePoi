@@ -11,7 +11,7 @@ import Foundation
 
 class JSONGetter {
     
-    class func downloadAndParseJSON(urlString: String, successBlock:(Dictionary<String,AnyObject>)->(), failureBlock:(NSError?)->()) {
+    class func downloadAndParseJSON(urlString: String, successBlock:(dict: Dictionary<String,AnyObject>)->(), failureBlock:(error: NSError?)->()) {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
             
@@ -20,13 +20,13 @@ class JSONGetter {
             if let jsonData = JSONGetter.getJSON(urlString, error:&error) {
                 if let dict = JSONGetter.parseJSON(jsonData, error:&error) {
                     dispatch_async(dispatch_get_main_queue()) {
-                        successBlock(dict)
+                        successBlock(dict: dict)
                     }
                 }
             }
             
             dispatch_async(dispatch_get_main_queue()) {
-                failureBlock(error)
+                failureBlock(error: error)
             }
         }
     }
