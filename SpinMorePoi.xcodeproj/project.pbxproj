@@ -15,6 +15,8 @@
 		5C4282341B2F53F60008BD2B /* SpinMorePoiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4282331B2F53F60008BD2B /* SpinMorePoiTests.swift */; };
 		5C42823E1B2F96A00008BD2B /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C42823D1B2F96A00008BD2B /* Logging.swift */; };
 		5C42826E1B320DCE0008BD2B /* JSONGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C42826D1B320DCE0008BD2B /* JSONGetter.swift */; };
+		5C4282721B347FAA0008BD2B /* initialData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C4282711B347FAA0008BD2B /* initialData.json */; };
+		5C4282741B3480BC0008BD2B /* FileGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4282731B3480BC0008BD2B /* FileGetter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		5C4282331B2F53F60008BD2B /* SpinMorePoiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinMorePoiTests.swift; sourceTree = "<group>"; };
 		5C42823D1B2F96A00008BD2B /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		5C42826D1B320DCE0008BD2B /* JSONGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONGetter.swift; sourceTree = "<group>"; };
+		5C4282711B347FAA0008BD2B /* initialData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = initialData.json; sourceTree = "<group>"; };
+		5C4282731B3480BC0008BD2B /* FileGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileGetter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +85,13 @@
 		5C42821A1B2F53F50008BD2B /* SpinMorePoi */ = {
 			isa = PBXGroup;
 			children = (
+				5C4282711B347FAA0008BD2B /* initialData.json */,
 				5C42821D1B2F53F50008BD2B /* AppDelegate.swift */,
 				5C42821F1B2F53F60008BD2B /* ViewController.swift */,
-				5C42826D1B320DCE0008BD2B /* JSONGetter.swift */,
 				5C4282211B2F53F60008BD2B /* Main.storyboard */,
 				5C42823D1B2F96A00008BD2B /* Logging.swift */,
+				5C42826D1B320DCE0008BD2B /* JSONGetter.swift */,
+				5C4282731B3480BC0008BD2B /* FileGetter.swift */,
 				5C4282241B2F53F60008BD2B /* Images.xcassets */,
 				5C4282261B2F53F60008BD2B /* LaunchScreen.xib */,
 				5C42821B1B2F53F50008BD2B /* Supporting Files */,
@@ -198,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C4282721B347FAA0008BD2B /* initialData.json in Resources */,
 				5C4282231B2F53F60008BD2B /* Main.storyboard in Resources */,
 				5C4282281B2F53F60008BD2B /* LaunchScreen.xib in Resources */,
 				5C4282251B2F53F60008BD2B /* Images.xcassets in Resources */,
@@ -220,6 +227,7 @@
 			files = (
 				5C42826E1B320DCE0008BD2B /* JSONGetter.swift in Sources */,
 				5C4282201B2F53F60008BD2B /* ViewController.swift in Sources */,
+				5C4282741B3480BC0008BD2B /* FileGetter.swift in Sources */,
 				5C42823E1B2F96A00008BD2B /* Logging.swift in Sources */,
 				5C42821E1B2F53F60008BD2B /* AppDelegate.swift in Sources */,
 			);

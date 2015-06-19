@@ -17,14 +17,17 @@ class JSONGetter {
             
             var error:NSError?
             
+            //Get and parse the JSON. If both are successful, run the successBlock and bail.
             if let jsonData = JSONGetter.getJSON(urlString, error:&error) {
                 if let dict = JSONGetter.parseJSON(jsonData, error:&error) {
                     dispatch_async(dispatch_get_main_queue()) {
                         successBlock(dict: dict)
                     }
+                    return
                 }
             }
             
+            //If either getting or parsing the JSON failed, run the failureBlock
             dispatch_async(dispatch_get_main_queue()) {
                 failureBlock(error: error)
             }

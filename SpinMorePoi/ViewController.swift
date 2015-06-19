@@ -29,7 +29,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnWatchRandomPoiVideo(sender: UIButton) {
-        //
         DebugLogWhereAmI()
         
         JSONGetter.downloadAndParseJSON("http://www.spinmorepoi.com/?json=1&count=-1",
