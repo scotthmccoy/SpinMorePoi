@@ -18,8 +18,8 @@ class JSONHelper {
             var error:NSError?
             
             //Get and parse the JSON. If both are successful, run the successBlock and bail.
-            if let jsonData = JSONGetter.getJSON(urlString, error:&error) {
-                if let dict = JSONGetter.parseJSON(jsonData, error:&error) {
+            if let jsonData = JSONHelper.getJSON(urlString, error:&error) {
+                if let dict = JSONHelper.parseJSON(jsonData, error:&error) {
                     dispatch_async(dispatch_get_main_queue()) {
                         successBlock(dict: dict)
                     }

@@ -12,6 +12,8 @@ import XCTest
 
 class FileSystemHelperTests: XCTestCase {
 
+    let fileName = "initialData.json"
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -23,25 +25,12 @@ class FileSystemHelperTests: XCTestCase {
     }
 
     func test_getDocAsStringWithResourceFallback_basic() {
-        let contents:String? = FileSystemHelper.getDocAsStringWithResourceFallback("initialData.json")
-        
-        if (contents == nil) {
-            XCTFail("File Contents nil!")
-        }
+        XCTAssert(FileSystemHelper.getDocAsStringWithResourceFallback(fileName) != nil, "File contents nil!")
     }
     
     func test_getDocAsStringWithResourceFallback_delete_before() {
-        if filemgr.removeItemAtPath(filepath1, error: &error) {
-            println("Remove successful")
-        } else {
-            println("Remove failed: \(error!.localizedDescription)")
-        }
-        
-        let contents:String? = FileSystemHelper.getDocAsStringWithResourceFallback("initialData.json")
-        
-        if (contents == nil) {
-            XCTFail("File Contents nil!")
-        }
+        FileSystemHelper.deleteDoc(fileName)
+        XCTAssert(FileSystemHelper.getDocAsStringWithResourceFallback(fileName) != nil, "File contents nil!")
     }
     
 

@@ -10,12 +10,24 @@ import Foundation
 
 class FileSystemHelper {
     
+    //MARK: Doc & Resource Paths
+    class func docPathForFile(filename:String) -> String {
+        var pathToDoc = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+        pathToDoc = pathToDoc.stringByAppendingPathComponent(filename)
+        return pathToDoc
+    }
     
+    class func resourcePathForFile(filename:String) -> String? {
+        let fileNameWithoutExtension = filename.lastPathComponent.stringByDeletingPathExtension
+        let fileExtension = filename.pathExtension
+        return NSBundle.mainBundle().pathForResource(fileNameWithoutExtension, ofType: fileExtension)
+    }
+    
+    //MARK: File Manipulation
     class func getDocAsStringWithResourceFallback(filename:String) -> String? {
 
         //Get the path to where the file will be if it's already in the docs folder
-        var pathToDoc = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-        pathToDoc = pathToDoc.stringByAppendingPathComponent(filename)
+        let pathToDoc = FileSystemHelper.docPathForFile(filename)
         
         //Check to see if it exists
         let fileManager = NSFileManager.defaultManager()
@@ -23,12 +35,8 @@ class FileSystemHelper {
 
             //It doesn't exist! This is probably the first run of the app. Copy it from the bundle.
             
-            //Split the file into name and extension
-            let fileNameWithoutExtension = filename.lastPathComponent.stringByDeletingPathExtension
-            let fileExtension = filename.pathExtension
-            
             //Get the bundle path for the file
-            if let pathToResource = NSBundle.mainBundle().pathForResource(fileNameWithoutExtension, ofType: fileExtension) {
+            if let pathToResource = resourcePathForFile(filename) {
             
                 //Copy it from the bundle to the docs folder
                 var error:NSError?
@@ -51,32 +59,22 @@ class FileSystemHelper {
         return ret
     }
 
-    func deleteDoc(filename:String) {
+    class func deleteDoc(filename:String) {
         
         //Get the path to where the file will be if it's already in the docs folder
-        var pathToDoc = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-        pathToDoc = pathToDoc.stringByAppendingPathComponent(filename)
+        var pathToDoc = FileSystemHelper.docPathForFile(filename)
         
         //Delete the file
         let fileManager = NSFileManager.defaultManager()
         var error:NSError?
-        if !fileManager.removeItemAtPath(filepath1, error: &error) {
+        if !fileManager.removeItemAtPath(pathToDoc, error: &error) {
             DebugLog("Remove failed: \(error)")
         }
     }
     
     
-    func writeToDoc(filename:String, contents:String) -> Bool {
-        co.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding, error: nil);
-        
-
-        
+    class func writeToDoc(filename:String, contents:String) {
+        let pathToDoc = FileSystemHelper.docPathForFile(filename)
+        contents.writeToFile(pathToDoc, atomically: false, encoding: NSUTF8StringEncoding, error: nil);
     }
- 
-    
-
-    
-    
-
-    
 }
