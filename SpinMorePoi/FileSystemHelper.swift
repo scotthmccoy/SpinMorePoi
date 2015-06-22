@@ -24,7 +24,7 @@ class FileSystemHelper {
     }
     
     //MARK: File Manipulation
-    class func getDocAsStringWithResourceFallback(filename:String) -> String? {
+    class func getDocAsDataWithResourceFallback(filename:String) -> NSData? {
 
         //Get the path to where the file will be if it's already in the docs folder
         let pathToDoc = FileSystemHelper.docPathForFile(filename)
@@ -50,10 +50,11 @@ class FileSystemHelper {
         
         //File should now exist at the doc path.
         var error:NSError?
-        let ret = String(contentsOfFile: pathToDoc, encoding: NSUTF8StringEncoding, error: &error)
+        let ret = NSData(contentsOfFile:pathToDoc, options:.DataReadingMappedIfSafe, error:&error)
         
         if let error = error {
             DebugLog("Error getting file! \(error)")
+            return nil
         }
         
         return ret
@@ -77,4 +78,13 @@ class FileSystemHelper {
         let pathToDoc = FileSystemHelper.docPathForFile(filename)
         contents.writeToFile(pathToDoc, atomically: false, encoding: NSUTF8StringEncoding, error: nil);
     }
+    
+    class func writeToDoc(filename:String, contents:NSData) {
+        let pathToDoc = FileSystemHelper.docPathForFile(filename)
+        var error:NSError?
+        if !contents.writeToFile(pathToDoc, options:NSDataWritingOptions.DataWritingFileProtectionNone, error:&error) {
+            DebugLog("Error writing to file! \(error)")
+        }
+    }
+    
 }

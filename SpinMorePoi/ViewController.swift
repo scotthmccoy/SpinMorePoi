@@ -31,14 +31,23 @@ class ViewController: UIViewController {
     @IBAction func btnWatchRandomPoiVideo(sender: UIButton) {
         DebugLogWhereAmI()
         
-        JSONHelper.downloadAndParseJSON("http://www.spinmorepoi.com/?json=1&count=-1",
-            successBlock: { (dict) -> () in
-                DebugLog("dict = \(dict)")
-            },
-            failureBlock: { (error) -> () in
-                DebugLog("error = \(error)")
+        //TODO: pass an error pointer to getDoc
+        var error:NSError?
+        
+        if let data = FileSystemHelper.getDocAsDataWithResourceFallback("videoData.json"),
+        dict = JSONHelper.parseJSON(data, error: &error) {
+            if let posts = dict["posts"] as? Array<Dictionary<String, String>> {
+                
+                let randomPostIndex = Int(posts.count)
+                DebugLog("randomPostIndex = \(randomPostIndex)")
+            } else {
+                DebugLog("Cast failed")
             }
-        );
+            
+        } else {
+            DebugLog("Error parsing JSON: \(error)")
+        }
+
     }
     
     

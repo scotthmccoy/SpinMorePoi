@@ -25,14 +25,14 @@ class FileSystemHelperTests: XCTestCase {
     }
 
     func test_getDocAsStringWithResourceFallback_basic() {
-        XCTAssert(FileSystemHelper.getDocAsStringWithResourceFallback(fileName) != nil, "File contents nil!")
+        XCTAssert(FileSystemHelper.getDocAsDataWithResourceFallback(fileName) != nil, "File contents nil!")
     }
     
     func test_getDocAsStringWithResourceFallback_delete_before() {
         FileSystemHelper.deleteDoc(fileName)
-        XCTAssert(FileSystemHelper.getDocAsStringWithResourceFallback(fileName) != nil, "File contents nil!")
+        XCTAssert(FileSystemHelper.getDocAsDataWithResourceFallback(fileName) != nil, "File contents nil!")
     }
     
-
+    //TODO: test download & parse with stub of server response
 
 }

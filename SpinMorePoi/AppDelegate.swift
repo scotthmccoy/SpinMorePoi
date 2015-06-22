@@ -31,10 +31,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        
+        //When the app launches, download the JSON in the background and replace the on-board videoData file.
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            var error:NSError?
+            if let data = JSONHelper.getJSON("http://www.spinmorepoi.com/?json=1&count=-1", error: &error) {
+                FileSystemHelper.writeToDoc("videoData.json", contents: data)
+            } else {
+                DebugLog("Error getting JSON from server: \(error)")
+            }
+        }
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        
+        
     }
 
     func applicationWillTerminate(application: UIApplication) {
