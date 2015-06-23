@@ -53,11 +53,16 @@ class ViewController: UIViewController {
                     return $0
                 })
                 
-                //Pick
+                //Pick a random url
                 let randomVideoURLArrayIndex = Int(roll: videoURLArray.count) - 1
-                let randomURL = videoURLArray[randomVideoURLArrayIndex]
+                let randomURLStr = videoURLArray[randomVideoURLArrayIndex]
                 
-                DebugLog("randomURL = \(randomURL)")
+                //Open the URL
+                if let url = NSURL(string:randomURLStr) {
+                    UIApplication.sharedApplication().openURL(url)
+                } else {
+                    DebugLog("Couldn't create url from string \(randomURLStr)")
+                }
                 
             } else {
                 DebugLog("Cast failed")
