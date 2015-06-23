@@ -80,6 +80,7 @@ class FileSystemHelper {
     }
     
     class func writeToDoc(filename:String, contents:NSData) {
+        DebugLogWhereAmI()
         let pathToDoc = FileSystemHelper.docPathForFile(filename)
         var error:NSError?
         if !contents.writeToFile(pathToDoc, options:NSDataWritingOptions.DataWritingFileProtectionNone, error:&error) {

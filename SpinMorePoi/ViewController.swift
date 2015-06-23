@@ -29,17 +29,36 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnWatchRandomPoiVideo(sender: UIButton) {
-        DebugLogWhereAmI()
         
-        //TODO: pass an error pointer to getDoc
+        //Read and parse the json file
         var error:NSError?
-        
         if let data = FileSystemHelper.getDocAsDataWithResourceFallback("videoData.json"),
         dict = JSONHelper.parseJSON(data, error: &error) {
-            if let posts = dict["posts"] as? Array<Dictionary<String, String>> {
+
+            //Pull the posts out
+            if let posts = dict["posts"] as? Array<Dictionary<String, AnyObject>> {
                 
-                let randomPostIndex = Int(posts.count)
-                DebugLog("randomPostIndex = \(randomPostIndex)")
+                //Reduce the posts array to an array containing non-blank video urls
+                let videoURLArray = posts.reduce([String](), combine: {
+                
+                    if let fields = $1["custom_fields"] as? Dictionary<String, AnyObject>,
+                    dp_video_url = fields["dp_video_url"] as? Array<String>,
+                    url = dp_video_url.first as String? where count(url) > 0 {
+                        //Return the reduce-to array with url added to the end
+                        return $0 + [url]
+                    }
+                    
+                    //Unable to extract the video url!
+                    //Return the reduce-to array
+                    return $0
+                })
+                
+                //Pick
+                let randomVideoURLArrayIndex = Int(roll: videoURLArray.count) - 1
+                let randomURL = videoURLArray[randomVideoURLArrayIndex]
+                
+                DebugLog("randomURL = \(randomURL)")
+                
             } else {
                 DebugLog("Cast failed")
             }
@@ -47,14 +66,6 @@ class ViewController: UIViewController {
         } else {
             DebugLog("Error parsing JSON: \(error)")
         }
-
     }
-    
-    
-    
-    
-
-    
-
 }
 

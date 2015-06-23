@@ -41,8 +41,10 @@ class JSONHelper {
                 return ret
             }
             DebugLog("ERROR \(error)")
+            return nil
         }
         
+        DebugLog("Couldn't parse URL \(urlString)")
         return nil
     }
 
