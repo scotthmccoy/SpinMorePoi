@@ -16,18 +16,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little-dude.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Ve-hF-Wsc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UK0-0g-bWm">
-                                <rect key="frame" x="221" y="73" width="158" height="30"/>
+                                <rect key="frame" x="213" y="200" width="174" height="34"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                 <state key="normal" title="Visit SpinMorePoi.Com">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="btnVisitSpinMorePoiClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oNr-80-xB5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIa-bA-Esv">
-                                <rect key="frame" x="212.5" y="259" width="175" height="30"/>
+                                <rect key="frame" x="204.5" y="271" width="191" height="34"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                 <state key="normal" title="Watch Random Poi Video">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -35,12 +41,16 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="UK0-0g-bWm" secondAttribute="centerX" id="7ZF-UQ-2MH"/>
-                            <constraint firstItem="fIa-bA-Esv" firstAttribute="bottom" secondItem="UK0-0g-bWm" secondAttribute="bottom" constant="186" id="QDf-jV-S1W"/>
-                            <constraint firstItem="UK0-0g-bWm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="53" id="dmm-M3-0YR"/>
-                            <constraint firstAttribute="centerX" secondItem="fIa-bA-Esv" secondAttribute="centerX" id="gZm-fs-HrW"/>
+                            <constraint firstAttribute="height" secondItem="1Ve-hF-Wsc" secondAttribute="height" id="2PJ-cV-9FD"/>
+                            <constraint firstAttribute="width" secondItem="1Ve-hF-Wsc" secondAttribute="width" id="HAv-Am-n6I"/>
+                            <constraint firstAttribute="centerX" secondItem="fIa-bA-Esv" secondAttribute="centerX" id="J5J-rb-e5B"/>
+                            <constraint firstAttribute="centerX" secondItem="UK0-0g-bWm" secondAttribute="centerX" id="fNk-av-7Go"/>
+                            <constraint firstAttribute="centerY" secondItem="1Ve-hF-Wsc" secondAttribute="centerY" id="i7E-Dc-ZZY"/>
+                            <constraint firstItem="fIa-bA-Esv" firstAttribute="bottom" secondItem="UK0-0g-bWm" secondAttribute="bottom" constant="71" id="jNj-j3-RSc"/>
+                            <constraint firstItem="UK0-0g-bWm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="180" id="sKH-ci-gGl"/>
+                            <constraint firstAttribute="centerX" secondItem="1Ve-hF-Wsc" secondAttribute="centerX" id="vb5-Fo-zyT"/>
                         </constraints>
                     </view>
                     <connections>
@@ -52,4 +62,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="little-dude.png" width="2123" height="4276"/>
+    </resources>
 </document>

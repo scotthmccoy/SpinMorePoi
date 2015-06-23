@@ -17,7 +17,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        themeButton(btnWatchRandomVideo)
+        themeButton(btnVisitSpinMorePoi)
+    }
+    
+    //MARK: Button Theme
+    
+    func themeButton(btn:UIButton) {
+        btn.layer.cornerRadius = 6
+        btn.layer.borderWidth = 4
+        btn.layer.borderColor = UIColor.whiteColor().CGColor
     }
 
     //MARK: IBActions

@@ -24,6 +24,7 @@
 		5C4282801B34D2C60008BD2B /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C42823D1B2F96A00008BD2B /* Logging.swift */; };
 		5C4282811B34D2C60008BD2B /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C42826D1B320DCE0008BD2B /* JSONHelper.swift */; };
 		5C4282891B38DDA00008BD2B /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF09001B38A4A50065A691 /* Int.swift */; };
+		5C42828B1B39D6530008BD2B /* little-dude.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C42828A1B39D6530008BD2B /* little-dude.png */; };
 		6CAF09011B38A4A50065A691 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF09001B38A4A50065A691 /* Int.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		5C4282711B347FAA0008BD2B /* videoData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videoData.json; sourceTree = "<group>"; };
 		5C4282731B3480BC0008BD2B /* FileSystemHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemHelper.swift; sourceTree = "<group>"; };
 		5C42827B1B34D1130008BD2B /* FileSystemHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemHelperTests.swift; sourceTree = "<group>"; };
+		5C42828A1B39D6530008BD2B /* little-dude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "little-dude.png"; sourceTree = "<group>"; };
 		6CAF09001B38A4A50065A691 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				5C42823D1B2F96A00008BD2B /* Logging.swift */,
 				5C42826D1B320DCE0008BD2B /* JSONHelper.swift */,
 				5C4282731B3480BC0008BD2B /* FileSystemHelper.swift */,
+				5C42828A1B39D6530008BD2B /* little-dude.png */,
 				5C4282241B2F53F60008BD2B /* Images.xcassets */,
 				5C4282261B2F53F60008BD2B /* LaunchScreen.xib */,
 				5C42821B1B2F53F50008BD2B /* Supporting Files */,
@@ -219,6 +222,7 @@
 				5C4282721B347FAA0008BD2B /* videoData.json in Resources */,
 				5C4282231B2F53F60008BD2B /* Main.storyboard in Resources */,
 				5C4282281B2F53F60008BD2B /* LaunchScreen.xib in Resources */,
+				5C42828B1B39D6530008BD2B /* little-dude.png in Resources */,
 				5C4282251B2F53F60008BD2B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
