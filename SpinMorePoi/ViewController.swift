@@ -21,6 +21,12 @@ class ViewController: UIViewController {
         themeButton(btnVisitSpinMorePoi)
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
+    
+    
     //MARK: Button Theme
     
     func themeButton(btn:UIButton) {

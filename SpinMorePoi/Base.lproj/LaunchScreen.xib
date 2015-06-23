@@ -19,19 +19,21 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACe-0I-o5C">
-                    <rect key="frame" x="139" y="203" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SpinMorePoi" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="eux-Xj-epD">
+                    <rect key="frame" x="53.5" y="213" width="213" height="43"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                    <color key="textColor" red="0.76327730429292928" green="0.76327730429292928" blue="0.76327730429292928" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Xhy-Cn-2ad" secondAttribute="bottom" id="11R-dl-4KO"/>
+                <constraint firstAttribute="centerX" secondItem="eux-Xj-epD" secondAttribute="centerX" id="4wN-3f-bf3"/>
                 <constraint firstAttribute="centerX" secondItem="Xhy-Cn-2ad" secondAttribute="centerX" id="7EV-oN-GTx"/>
                 <constraint firstItem="Xhy-Cn-2ad" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="DKg-Gb-jmB"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
+                <constraint firstAttribute="centerY" secondItem="eux-Xj-epD" secondAttribute="centerY" constant="5.5" id="LZZ-ex-TBz"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
                 <constraint firstAttribute="trailing" secondItem="Xhy-Cn-2ad" secondAttribute="trailing" id="iCq-BE-zEb"/>

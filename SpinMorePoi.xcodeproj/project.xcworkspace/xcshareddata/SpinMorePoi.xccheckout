@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>08D1A546-2C71-4AD1-A8FA-EEE0C41182F8</string>
 	<key>IDESourceControlProjectName</key>
-	<string>SpinMorePoi</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>3289F7317750A48F3A1B7758922E178A7866C87E</key>
 		<string>https://github.com/scotthmccoy/SpinMorePoi.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SpinMorePoi.xcodeproj</string>
+	<string>SpinMorePoi.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3289F7317750A48F3A1B7758922E178A7866C87E</key>
