@@ -36,6 +36,7 @@ class JSONHelper {
 
 
     class func getJSON(urlString: String, error:NSErrorPointer) -> NSData? {
+        DebugLogWhereAmI()
         if let url = NSURL(string: urlString){
             if let ret = NSData(contentsOfURL: url, options: NSDataReadingOptions.DataReadingUncached, error:error) {
                 return ret
