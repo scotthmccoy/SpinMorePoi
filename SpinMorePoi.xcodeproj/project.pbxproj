@@ -25,6 +25,7 @@
 		5C4282811B34D2C60008BD2B /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C42826D1B320DCE0008BD2B /* JSONHelper.swift */; };
 		5C4282891B38DDA00008BD2B /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF09001B38A4A50065A691 /* Int.swift */; };
 		5C42828B1B39D6530008BD2B /* little-dude.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C42828A1B39D6530008BD2B /* little-dude.png */; };
+		6C11A2421B4C8C4300BC4B63 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C11A2411B4C8C4300BC4B63 /* WebViewController.swift */; };
 		6CAF09011B38A4A50065A691 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF09001B38A4A50065A691 /* Int.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		5C4282731B3480BC0008BD2B /* FileSystemHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemHelper.swift; sourceTree = "<group>"; };
 		5C42827B1B34D1130008BD2B /* FileSystemHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemHelperTests.swift; sourceTree = "<group>"; };
 		5C42828A1B39D6530008BD2B /* little-dude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "little-dude.png"; sourceTree = "<group>"; };
+		6C11A2411B4C8C4300BC4B63 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		6CAF09001B38A4A50065A691 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 				5C42821D1B2F53F50008BD2B /* AppDelegate.swift */,
 				6CAF09001B38A4A50065A691 /* Int.swift */,
 				5C42821F1B2F53F60008BD2B /* ViewController.swift */,
+				6C11A2411B4C8C4300BC4B63 /* WebViewController.swift */,
 				5C4282211B2F53F60008BD2B /* Main.storyboard */,
 				5C42823D1B2F96A00008BD2B /* Logging.swift */,
 				5C42826D1B320DCE0008BD2B /* JSONHelper.swift */,
@@ -245,6 +248,7 @@
 				5C4282201B2F53F60008BD2B /* ViewController.swift in Sources */,
 				5C4282741B3480BC0008BD2B /* FileSystemHelper.swift in Sources */,
 				6CAF09011B38A4A50065A691 /* Int.swift in Sources */,
+				6C11A2421B4C8C4300BC4B63 /* WebViewController.swift in Sources */,
 				5C42823E1B2F96A00008BD2B /* Logging.swift in Sources */,
 				5C42821E1B2F53F60008BD2B /* AppDelegate.swift in Sources */,
 			);
